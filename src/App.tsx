@@ -7,7 +7,7 @@ import {
   StatusBar,
 } from 'react-native';
 import {PrimaryButton, SecondaryButton} from './Button';
-import { Title, Subtitle, Paragraph } from './Text';
+import {Title, Subtitle, Paragraph} from './Text';
 
 const App: React.FC = (): React.ReactElement => {
   const style = StyleSheet.create({
@@ -29,11 +29,17 @@ const App: React.FC = (): React.ReactElement => {
       <SafeAreaView>
         <ScrollView>
           <View style={style.fullWidth}>
-              <Title>Hello World</Title>
-              <Subtitle>A sample component</Subtitle>
-              <Paragraph>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin et neque non elit interdum ullamcorper vel ac leo. Etiam lacinia blandit accumsan. Sed dolor mauris, dignissim et venenatis sed, porta vitae dolor. Integer pellentesque elit sed dui blandit lobortis. Mauris lobortis eleifend sollicitudin. Suspendisse eget nulla eros. Aliquam a diam nec nisl suscipit pulvinar eget condimentum sapien. Nulla vel leo orci.
-              </Paragraph>
+            <Title>Hello World</Title>
+            <Subtitle>A sample component</Subtitle>
+            <Paragraph>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin et
+              neque non elit interdum ullamcorper vel ac leo. Etiam lacinia
+              blandit accumsan. Sed dolor mauris, dignissim et venenatis sed,
+              porta vitae dolor. Integer pellentesque elit sed dui blandit
+              lobortis. Mauris lobortis eleifend sollicitudin. Suspendisse eget
+              nulla eros. Aliquam a diam nec nisl suscipit pulvinar eget
+              condimentum sapien. Nulla vel leo orci.
+            </Paragraph>
           </View>
           <View style={style.fullWidth}>
             <SecondaryButton>Remover</SecondaryButton>
