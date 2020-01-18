@@ -4,26 +4,21 @@ import {
   StyleSheet,
   ScrollView,
   View,
-  Text,
   StatusBar,
-  ViewStyle,
-  TextStyle,
 } from 'react-native';
-
-interface AppStyle {
-  wrapper: ViewStyle;
-  title: TextStyle;
-}
+import {PrimaryButton, SecondaryButton} from './Button';
 
 const App: React.FC = (): React.ReactElement => {
-  const style: StyleSheet.NamedStyles<AppStyle> = StyleSheet.create({
-    wrapper: {
+  const style = StyleSheet.create({
+    fullWidth: {
+      width: '100%',
       marginTop: 32,
       paddingHorizontal: 24,
     },
-    title: {
-      fontSize: 24,
-      fontWeight: '600',
+    halfWidth: {
+      width: '50%',
+      marginTop: 32,
+      paddingHorizontal: 24,
     },
   });
 
@@ -32,8 +27,16 @@ const App: React.FC = (): React.ReactElement => {
       <StatusBar />
       <SafeAreaView>
         <ScrollView>
-          <View style={style.wrapper}>
-            <Text style={style.title}>React Native</Text>
+          <View style={style.fullWidth}>
+            <SecondaryButton>Remover</SecondaryButton>
+          </View>
+          <View style={style.fullWidth}>
+            <PrimaryButton onPress={() => console.log('onPress')}>
+              Geral
+            </PrimaryButton>
+          </View>
+          <View style={style.halfWidth}>
+            <PrimaryButton>Individual</PrimaryButton>
           </View>
         </ScrollView>
       </SafeAreaView>
