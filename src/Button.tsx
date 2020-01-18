@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import {TextStyle, TouchableOpacity, Text, ViewStyle} from 'react-native';
 
-interface BaseButtonProps extends DSButton {
+interface BaseButtonProps extends ButtonProps {
   textStyle: TextStyle;
   viewStyle: ViewStyle;
 
@@ -20,11 +20,11 @@ const BaseButton: React.FC<BaseButtonProps> = (props): React.ReactElement => (
   </>
 );
 
-export interface DSButton {
+export interface ButtonProps {
   onPress?(): void;
 }
 
-export const PrimaryButton: React.FC<DSButton> = (
+export const PrimaryButton: React.FC<ButtonProps> = (
   props,
 ): React.ReactElement => {
   const [bgNormal, bgPressed] = ['#3A659E', '#D7D8DC'];
@@ -68,7 +68,7 @@ export const PrimaryButton: React.FC<DSButton> = (
   );
 };
 
-export const SecondaryButton: React.FC<DSButton> = (
+export const SecondaryButton: React.FC<ButtonProps> = (
   props,
 ): React.ReactElement => {
   return (
