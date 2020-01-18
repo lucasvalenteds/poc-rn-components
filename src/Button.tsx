@@ -35,7 +35,7 @@ export const PrimaryButton: React.FC<ButtonProps> = (
   const [isPressed, setPressed] = useState(false);
 
   useEffect(() => {
-    if (isPressed === true) {
+    if (isPressed) {
       setBg(bgPressed);
       setColor(colorPressed);
     } else {
