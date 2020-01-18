@@ -1,4 +1,4 @@
-POC: React Native Components
+# POC: React Native Components
 
 It demonstrates how to write React/Native components by splitting behavior and presentation.
 
