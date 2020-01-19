@@ -91,3 +91,28 @@ export const SecondaryButton: React.FC<ButtonProps> = (
     />
   );
 };
+
+export const DisabledButton: React.FC<ButtonProps> = (
+  props,
+): React.ReactElement => {
+  return (
+    <BaseButton
+      {...props}
+      onPress={() => {}}
+      textStyle={{
+        color: '#FFFFFF',
+        fontSize: 18,
+        fontFamily: 'Roboto',
+        textAlignVertical: 'center',
+        height: '100%',
+      }}
+      viewStyle={{
+        width: '100%',
+        height: 40,
+        borderRadius: 40,
+        alignItems: 'center',
+        backgroundColor: '#F4F4F4',
+      }}
+    />
+  );
+};
