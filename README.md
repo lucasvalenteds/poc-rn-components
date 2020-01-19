@@ -12,4 +12,7 @@ It demonstrates how to write React/Native components by splitting behavior and p
 
 ## Preview
 
-![app screenshot](./preview.png)
+| | |
+| :--: | :--- |
+| ![](./preview/01.png) | ![](./preview/02.png) |
+| ![](./preview/03.png) | ![](./preview/04.png) |
