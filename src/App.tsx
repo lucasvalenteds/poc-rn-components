@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   SafeAreaView,
   StyleSheet,
@@ -6,8 +6,9 @@ import {
   View,
   StatusBar,
 } from 'react-native';
-import {PrimaryButton, SecondaryButton} from './Button';
+import {PrimaryButton, SecondaryButton, DisabledButton} from './Button';
 import {Title, Subtitle, Paragraph} from './Text';
+import {DefaultInput} from './Input';
 
 const App: React.FC = (): React.ReactElement => {
   const style = StyleSheet.create({
@@ -22,6 +23,14 @@ const App: React.FC = (): React.ReactElement => {
       paddingHorizontal: 24,
     },
   });
+
+  const [isEnabled, setEnabled] = useState(true);
+  const [text, setText] = useState<string>("");
+
+  useEffect(() => {
+      if (text.length >= 5) setEnabled(true);
+      else setEnabled(false);
+  }, [text, setEnabled]);
 
   return (
     <>
@@ -42,15 +51,25 @@ const App: React.FC = (): React.ReactElement => {
             </Paragraph>
           </View>
           <View style={style.fullWidth}>
-            <SecondaryButton>Remover</SecondaryButton>
+              <DefaultInput 
+                  placeholder={"Word with five letters or more"}
+                  value={text}
+                  onChangeText={setText}
+              />
           </View>
           <View style={style.fullWidth}>
-            <PrimaryButton onPress={() => console.log('onPress')}>
-              Geral
+              {isEnabled 
+              ? <SecondaryButton onPress={() => setText("")}>Clear</SecondaryButton>
+              : <DisabledButton>Clear</DisabledButton>
+              }
+          </View>
+          <View style={style.fullWidth}>
+            <PrimaryButton onPress={() => console.log("onPress")}>
+                Save Text
             </PrimaryButton>
           </View>
           <View style={style.halfWidth}>
-            <PrimaryButton>Individual</PrimaryButton>
+            <PrimaryButton>Save Text</PrimaryButton>
           </View>
         </ScrollView>
       </SafeAreaView>
