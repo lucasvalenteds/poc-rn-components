@@ -28,7 +28,7 @@ const App: React.FC = (): React.ReactElement => {
   const [text, setText] = useState<string>('');
 
   useEffect(() => {
-    if (text.length >= 5) {
+    if (text.length >= 3) {
       setEnabled(true);
     } else {
       setEnabled(false);
@@ -55,7 +55,7 @@ const App: React.FC = (): React.ReactElement => {
           </View>
           <View style={style.fullWidth}>
             <DefaultInput
-              placeholder={'Word with five letters or more'}
+              placeholder={'Full name'}
               value={text}
               onChangeText={setText}
             />
