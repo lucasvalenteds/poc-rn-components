@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, {useState, useEffect} from 'react';
 import {
   SafeAreaView,
   StyleSheet,
@@ -25,11 +25,14 @@ const App: React.FC = (): React.ReactElement => {
   });
 
   const [isEnabled, setEnabled] = useState(true);
-  const [text, setText] = useState<string>("");
+  const [text, setText] = useState<string>('');
 
   useEffect(() => {
-      if (text.length >= 5) setEnabled(true);
-      else setEnabled(false);
+    if (text.length >= 5) {
+      setEnabled(true);
+    } else {
+      setEnabled(false);
+    }
   }, [text, setEnabled]);
 
   return (
@@ -51,21 +54,24 @@ const App: React.FC = (): React.ReactElement => {
             </Paragraph>
           </View>
           <View style={style.fullWidth}>
-              <DefaultInput 
-                  placeholder={"Word with five letters or more"}
-                  value={text}
-                  onChangeText={setText}
-              />
+            <DefaultInput
+              placeholder={'Word with five letters or more'}
+              value={text}
+              onChangeText={setText}
+            />
           </View>
           <View style={style.fullWidth}>
-              {isEnabled 
-              ? <SecondaryButton onPress={() => setText("")}>Clear</SecondaryButton>
-              : <DisabledButton>Clear</DisabledButton>
-              }
+            {isEnabled ? (
+              <SecondaryButton onPress={() => setText('')}>
+                Clear
+              </SecondaryButton>
+            ) : (
+              <DisabledButton>Clear</DisabledButton>
+            )}
           </View>
           <View style={style.fullWidth}>
-            <PrimaryButton onPress={() => console.log("onPress")}>
-                Save Text
+            <PrimaryButton onPress={() => console.log('onPress')}>
+              Save Text
             </PrimaryButton>
           </View>
           <View style={style.halfWidth}>
